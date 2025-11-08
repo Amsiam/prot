@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('galaries', function (Blueprint $table) {
+        Schema::create('honour_awards', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->string('link')->nullable(); // Optional link associated with the image
-            $table->string('category')->nullable(); // e.g., Photography, Design, etc.
+            $table->string('awarded_by')->nullable();
+            $table->string('date')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('galaries');
+        Schema::dropIfExists('honour_awards');
     }
 };

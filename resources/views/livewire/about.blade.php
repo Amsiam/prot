@@ -4,6 +4,7 @@
         </h2>
         <div class="grid md:grid-cols-1 gap-8">
             @foreach ($this->educations as $education)
+            {{-- @dd($education) --}}
                 <div data-slot="card"
                     class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500">
@@ -21,8 +22,14 @@
                                 <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path>
                             </svg>{{ $education->degree_name }}
                         </div>
+                        <div class="flex items-center justify-between gap-4">
                         <div data-slot="card-description" class="text-muted-foreground text-sm">
-                            {{ $education->university_name }}</div>
+                            {{ $education->institution }}
+                        </div>
+                        <div data-slot="card-description" class="text-muted-foreground text-sm">
+                            {{ $education->start_date }} - {{ $education->end_date ? $education->end_date : 'Present' }}
+                        </div>
+                        </div>
                     </div>
                     <div data-slot="card-content" class="px-6">
                         <div class="flex items-center gap-4 mb-4">

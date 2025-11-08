@@ -1,7 +1,7 @@
 <section id="contact" class="py-16 px-6 bg-slate-50">
     <div class="max-w-4xl mx-auto text-center">
-        <div class="mb-8"><img alt="{{ $this->me->name }}" loading="lazy" width="80" height="80" decoding="async"
-                data-nimg="1" class="rounded-full object-cover mx-auto mb-4 border-4 border-white shadow-lg"
+        <div class="mb-8"><img alt="{{ $this->me->name }}" loading="lazy" decoding="async"
+                data-nimg="1" class="rounded-full object-cover mx-auto mb-4 border-4 border-blue-800 shadow-lg w-20 h-20"
                 style="color:transparent" src="{{ asset('storage/' . $this->me->profile_image) }}">
             <h2 class="text-3xl font-bold text-slate-900 mb-4">Let's Collaborate on Impactful Research</h2>
         </div>

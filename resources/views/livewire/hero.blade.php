@@ -3,9 +3,9 @@
         <div class="grid lg:grid-cols-3 gap-12 items-start">
             <div class="lg:col-span-2">
                 <div class="flex items-start gap-6 mb-8">
-                    <div class="relative"><img alt="{{ $this->me->name }}" loading="lazy" width="120" height="120"
+                    <div class="relative"><img alt="{{ $this->me->name }}"
                             decoding="async" data-nimg="1"
-                            class="rounded-full object-cover border-4 border-white shadow-lg" style="color:transparent"
+                            class="rounded-full object-cover border-4 border-blue-800 shadow-lg w-30 h-30" style="color:transparent"
                             src="{{ asset('storage/' . $this->me->profile_image) }}" />
                         <div
                             class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-2 border-white">
@@ -138,8 +138,13 @@
                                 class="text-sm text-slate-600">Publications</span><span
                                 class="font-semibold">{{ $this->publications->count() }}+</span></div>
                         <div class="flex justify-between"><span class="text-sm text-slate-600">Under
-                                Review</span><span
+                                Review</span>
+                        <span
                                 class="font-semibold">{{ $this->publications->where('status', 'In Review')->count() }}</span>
+                        </div>
+                        <div class="flex justify-between"><span class="text-sm text-slate-600">IN Progress</span>
+                        <span
+                                class="font-semibold">{{ $this->publications->where('status', 'In Progress')->count() }}</span>
                         </div>
                         <div class="flex justify-between"><span class="text-sm text-slate-600">CGPA</span><span
                                 class="font-semibold">3.70/4.00</span></div>
@@ -148,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div data-slot="card"
+                {{-- <div data-slot="card"
                     class="text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200">
                     <div data-slot="card-header"
                         class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
@@ -163,7 +168,7 @@
                             <li>• Consulting Projects</li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

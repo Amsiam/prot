@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Galary extends Model
 {
     protected $guarded = ['id'];
+
+    public function images()
+    {
+        return $this->hasMany(GalaryImages::class);
+    }
 }

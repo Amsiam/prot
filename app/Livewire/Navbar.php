@@ -22,7 +22,7 @@ class Navbar extends Component
         <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200 ">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <a href="" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{asset('storage/'.$this->me->profile_image)}}" class="h-8 rounded-2xl" alt="{{$this->me->name}}">
+                <img src="{{asset('storage/'.$this->me->profile_image)}}" class="w-8 h-8 rounded-full border-2 border-blue-800" alt="{{$this->me->name}}">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap ">{{$this->me->name}}</span>
             </a>
             <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">

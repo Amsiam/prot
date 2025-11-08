@@ -41,6 +41,7 @@ class PublicationForm
                             ->options([
                                 'Published' => 'Published',
                                 'In Review' => 'In Review',
+                    'In Progress' => 'In Progress',
                                 'Draft' => 'Draft',
                             ])
                             ->default('Draft')

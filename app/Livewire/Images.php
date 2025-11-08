@@ -20,7 +20,7 @@ class Images extends Component
     #[\Livewire\Attributes\Computed()]
     public function images()
     {
-        return \App\Models\Galary::when($this->selectedCategory != 'all', function ($query) {
+        return \App\Models\Galary::with('images')->when($this->selectedCategory != 'all', function ($query) {
             $query->where('category', $this->selectedCategory);
         })
             ->get();

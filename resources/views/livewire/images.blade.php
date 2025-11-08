@@ -26,8 +26,10 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                @foreach ($this->images as $image)
-                    <a href="{{ $image->link }}" target="_blank" rel="noopener noreferrer">
+                @foreach ($this->images as $i)
+                    @foreach ($i->images as $image)
+
+                    <a href="{{ $i->link }}" target="_blank" rel="noopener noreferrer">
                         <div data-slot="card"
                             class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm overflow-hidden cursor-pointer hover:shadow-lg transition-shadow">
                             <div data-slot="card-content" class="p-0">
@@ -39,10 +41,10 @@
                                         class="absolute inset-0 bg-black/0 hover:bg-black/20 transition-colors flex items-end">
                                         <div class="p-4 text-white opacity-0 hover:opacity-100 transition-opacity">
                                             <h4 class="font-semibold">
-                                                {{ $image->title }}
+                                                {{ $i->title }}
                                             </h4>
                                             <div class="text-sm">
-                                                {{ $image->description }}
+                                                {{ $i->description }}
                                             </div>
                                         </div>
                                     </div>
@@ -50,6 +52,8 @@
                             </div>
                         </div>
                     </a>
+
+                    @endforeach
                 @endforeach
             </div>
         </div>
