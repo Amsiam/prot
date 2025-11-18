@@ -1195,6 +1195,7 @@
         @livewire('images')
         @livewire('experience')
         @livewire('honour-award')
+        @livewire('certification')
         @livewire('contact-me')
         @livewire('footer')
     </div><!--$--><!--/$-->
