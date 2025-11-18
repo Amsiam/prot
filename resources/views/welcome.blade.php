@@ -1191,6 +1191,7 @@
         @livewire('hero')
         @livewire('about')
         @livewire('research')
+        @livewire('projects')
         @livewire('publications')
         @livewire('images')
         @livewire('experience')
