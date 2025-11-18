@@ -32,10 +32,12 @@
                             </p>
                             <div class="flex gap-2 mb-4">
                                 @foreach ($published->tags as $tag)
-                                    <span data-slot="badge"
-                                        class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&&gt;svg]:size-3 gap-1 [&&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90">
-                                        {{ $tag }}
-                                    </span>
+                                    @if ($tag)
+                                        <span data-slot="badge"
+                                            class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&&gt;svg]:size-3 gap-1 [&&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90">
+                                            {{ $tag }}
+                                        </span>
+                                    @endif
                                 @endforeach
                             </div>
                             <a target="_blank" data-slot="button"
@@ -66,10 +68,12 @@
                             </div>
                             <div class="flex gap-1">
                                 @foreach ($unpublished->tags as $tag)
-                                    <span data-slot="badge"
-                                        class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&&gt;svg]:size-3 gap-1 [&&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground text-xs">
-                                        {{ $tag }}
-                                    </span>
+                                    @if ($tag)
+                                        <span data-slot="badge"
+                                            class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&&gt;svg]:size-3 gap-1 [&&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground text-xs">
+                                            {{ $tag }}
+                                        </span>
+                                    @endif
                                 @endforeach
                             </div>
                         </div>

@@ -3,10 +3,9 @@
         <div class="grid lg:grid-cols-3 gap-12 items-start">
             <div class="lg:col-span-2">
                 <div class="flex items-start gap-6 mb-8">
-                    <div class="relative"><img alt="{{ $this->me->name }}"
-                            decoding="async" data-nimg="1"
-                            class="rounded-full object-cover border-4 border-blue-800 shadow-lg w-30 h-30" style="color:transparent"
-                            src="{{ asset('storage/' . $this->me->profile_image) }}" />
+                    <div class="relative"><img alt="{{ $this->me->name }}" decoding="async" data-nimg="1"
+                            class="rounded-full object-cover border-4 border-blue-800 shadow-lg w-30 h-30"
+                            style="color:transparent" src="{{ asset('storage/' . $this->me->profile_image) }}" />
                         <div
                             class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-2 border-white">
                         </div>
@@ -43,10 +42,12 @@
                     </p>
                     <div class="flex flex-wrap gap-3 mb-8">
                         @foreach ($this->me->tags as $tag)
-                            <span data-slot="badge"
-                                class="inline-flex items-center justify-center rounded-md border text-xs font-medium w-fit whitespace-nowrap shrink-0 px-2.5 py-1.5 bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700">
-                                {{ $tag }}
-                            </span>
+                            @if ($tag)
+                                <span data-slot="badge"
+                                    class="inline-flex items-center justify-center rounded-md border text-xs font-medium w-fit whitespace-nowrap shrink-0 px-2.5 py-1.5 bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700">
+                                    {{ $tag }}
+                                </span>
+                            @endif
                         @endforeach
 
                     </div>
@@ -139,11 +140,11 @@
                                 class="font-semibold">{{ $this->publications->count() }}+</span></div>
                         <div class="flex justify-between"><span class="text-sm text-slate-600">Under
                                 Review</span>
-                        <span
+                            <span
                                 class="font-semibold">{{ $this->publications->where('status', 'In Review')->count() }}</span>
                         </div>
                         <div class="flex justify-between"><span class="text-sm text-slate-600">IN Progress</span>
-                        <span
+                            <span
                                 class="font-semibold">{{ $this->publications->where('status', 'In Progress')->count() }}</span>
                         </div>
                         <div class="flex justify-between"><span class="text-sm text-slate-600">CGPA</span><span

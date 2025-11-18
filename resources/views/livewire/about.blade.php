@@ -4,7 +4,7 @@
         </h2>
         <div class="grid md:grid-cols-1 gap-8">
             @foreach ($this->educations as $education)
-            {{-- @dd($education) --}}
+                {{-- @dd($education) --}}
                 <div data-slot="card"
                     class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm relative overflow-hidden">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500">
@@ -23,20 +23,23 @@
                             </svg>{{ $education->degree_name }}
                         </div>
                         <div class="flex items-center justify-between gap-4">
-                        <div data-slot="card-description" class="text-muted-foreground text-sm">
-                            {{ $education->institution }}
-                        </div>
-                        <div data-slot="card-description" class="text-muted-foreground text-sm">
-                            {{ $education->start_date }} - {{ $education->end_date ? $education->end_date : 'Present' }}
-                        </div>
+                            <div data-slot="card-description" class="text-muted-foreground text-sm">
+                                {{ $education->institution }}
+                            </div>
+                            <div data-slot="card-description" class="text-muted-foreground text-sm">
+                                {{ $education->start_date }} -
+                                {{ $education->end_date ? $education->end_date : 'Present' }}
+                            </div>
                         </div>
                     </div>
                     <div data-slot="card-content" class="px-6">
                         <div class="flex items-center gap-4 mb-4">
                             @foreach ($education->tags as $tag)
-                                <span data-slot="badge"
-                                    class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground">
-                                    {{ $tag }}</span>
+                                @if ($tag)
+                                    <span data-slot="badge"
+                                        class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground">
+                                        {{ $tag }}</span>
+                                @endif
                             @endforeach
                         </div>
                         <div class="text-slate-600 mb-4">
