@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Filament\Resources\Hobbies\Hobbies\Schemas;
+
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Schemas\Schema;
+
+class HobbyForm
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextInput::make('title')
+                    ->required(),
+                Textarea::make('description')
+                    ->columnSpanFull(),
+                TextInput::make('icon')
+                    ->label('Icon (emoji or icon name)')
+                    ->placeholder('🎨'),
+                TextInput::make('order')
+                    ->required()
+                    ->numeric()
+                    ->default(0),
+            ]);
+    }
+}
